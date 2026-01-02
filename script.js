@@ -285,8 +285,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observe all animatable elements
-    document.querySelectorAll('.text-content, .image-parallax, .mock-image').forEach(el => {
+    document.querySelectorAll('.text-content, .image-parallax, .mock-image, .bio-content, .bio-image').forEach(el => {
         observer.observe(el);
+    });
+    
+    // Animated counters for stats
+    function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        const timer = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+                element.textContent = target.toLocaleString();
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(start).toLocaleString();
+            }
+        }, 16);
+    }
+    
+    // Stats counter observer
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                entry.target.classList.add('counted');
+                const target = parseInt(entry.target.getAttribute('data-count'));
+                animateCounter(entry.target, target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    // Observe stat numbers
+    document.querySelectorAll('.stat-number').forEach(el => {
+        statsObserver.observe(el);
     });
 });
 

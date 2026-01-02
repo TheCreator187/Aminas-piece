@@ -399,10 +399,203 @@ body {
     background: radial-gradient(circle, var(--accent-color) 0%, transparent 65%);
 }
 
+.element-3 {
+    top: 20%;
+    right: 10%;
+    background: radial-gradient(circle, var(--secondary-light) 0%, transparent 65%);
+}
+
+/* Bio Section */
+.bio-section {
+    padding: 10rem 2rem;
+    background: linear-gradient(to bottom, var(--primary-light) 0%, var(--bg-cream) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.bio-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.bio-image {
+    position: relative;
+}
+
+.bio-portrait {
+    background: linear-gradient(135deg, #8B7355 0%, #A68968 50%, #B8A390 100%);
+    height: 600px;
+    border-radius: 20px;
+}
+
+.bio-portrait::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 40px);
+    mix-blend-mode: overlay;
+}
+
+.bio-content {
+    padding: 2rem 0;
+}
+
+.bio-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+.bio-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text-medium);
+    line-height: 2;
+    letter-spacing: 0.3px;
+    margin-bottom: 1.8rem;
+}
+
+.bio-signature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.bio-signature svg {
+    opacity: 0.7;
+}
+
+.bio-signature span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--text-medium);
+    letter-spacing: 0.5px;
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 10rem 2rem;
+    background: linear-gradient(135deg, var(--bg-cream) 0%, var(--primary-light) 50%, var(--accent-warm) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 4rem 3rem;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 12px 36px var(--shadow-light);
+    border: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card:hover::before {
+    transform: scaleX(1);
+}
+
+.stat-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 24px 56px var(--shadow-medium);
+}
+
+.stat-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease;
+}
+
+.stat-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 12px rgba(139, 115, 85, 0.15));
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.stat-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-medium);
+    line-height: 1.6;
+    opacity: 0.85;
+    letter-spacing: 0.3px;
+}
+
 /* Gallery Section */
 .gallery-section {
     padding: 10rem 2rem;
-    background: linear-gradient(to bottom, var(--primary-light) 0%, var(--bg-light) 100%);
+    background: linear-gradient(to bottom, var(--accent-warm) 0%, var(--bg-light) 100%);
 }
 
 .section-title {
@@ -957,9 +1150,44 @@ body {
     .gallery-section,
     .process-section,
     .contact-section,
-    .custom-section {
+    .bio-section,
+    .stats-section {
         padding: 6rem 1.5rem;
         min-height: auto;
+    }
+    
+    .bio-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .bio-portrait {
+        height: 450px;
+    }
+    
+    .bio-content h2 {
+        font-size: 3rem;
+    }
+    
+    .bio-text p {
+        font-size: 1.05rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2rem;
+    }
+    
+    .stat-card {
+        padding: 3rem 2rem;
+    }
+    
+    .stat-number {
+        font-size: 3.5rem;
+    }
+    
+    .stat-label {
+        font-size: 1.4rem;
     }
     
     .hero-section {
@@ -1108,8 +1336,65 @@ body {
     .story-section,
     .gallery-section,
     .process-section,
-    .contact-section {
+    .contact-section,
+    .bio-section,
+    .stats-section {
         padding: 5rem 1rem;
+    }
+    
+    .bio-portrait {
+        height: 350px;
+    }
+    
+    .bio-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .bio-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+    
+    .bio-signature {
+        margin-top: 2rem;
+    }
+    
+    .bio-signature svg {
+        width: 100px;
+        height: 50px;
+    }
+    
+    .bio-signature span {
+        font-size: 1.2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .stat-card {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+    }
+    
+    .stat-label {
+        font-size: 1.3rem;
+    }
+    
+    .stat-description {
+        font-size: 0.95rem;
     }
     
     .cta-button {
@@ -1160,6 +1445,22 @@ body {
     
     .gallery-item .mock-image {
         height: 240px;
+    }
+    
+    .bio-portrait {
+        height: 300px;
+    }
+    
+    .bio-content h2 {
+        font-size: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-label {
+        font-size: 1.2rem;
     }
 }
 
