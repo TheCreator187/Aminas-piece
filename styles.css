@@ -292,6 +292,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    padding: 0 2rem;
 }
 
 .content-wrapper.reverse {
@@ -420,6 +421,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 2.5rem;
+    padding: 0 2rem;
 }
 
 .gallery-item {
@@ -791,6 +793,7 @@ body {
     font-weight: 300;
     letter-spacing: 0.5px;
     opacity: 0.8;
+    line-height: 1.6;
 }
 
 /* Responsive Design */
@@ -805,6 +808,24 @@ body {
 
     .section-title {
         font-size: 3.5rem;
+    }
+    
+    .content-wrapper {
+        gap: 3rem;
+    }
+    
+    .mock-image {
+        height: 450px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+    }
+    
+    .process-timeline {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2.5rem;
     }
 }
 
@@ -828,6 +849,7 @@ body {
     .hero-title {
         font-size: 3.5rem;
         letter-spacing: 2px;
+        margin-bottom: 1rem;
     }
 
     .hero-subtitle {
@@ -842,14 +864,17 @@ body {
     .content-wrapper {
         grid-template-columns: 1fr;
         gap: 3rem;
+        padding: 0 1rem;
     }
 
     .text-content {
         max-width: 100%;
+        padding: 1rem;
     }
 
     .text-content h2 {
         font-size: 2.8rem;
+        margin-bottom: 1.5rem;
     }
 
     .text-content p {
@@ -858,18 +883,43 @@ body {
 
     .section-title {
         font-size: 2.8rem;
+        margin-bottom: 3rem;
     }
 
     .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .gallery-item .mock-image {
+        height: 350px;
     }
 
     .process-timeline {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .process-step {
+        padding: 3rem 2rem;
+    }
+    
+    .step-number {
+        font-size: 3rem;
+    }
+    
+    .process-step h3 {
+        font-size: 1.6rem;
     }
 
     .custom-features {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .feature {
+        padding: 2.5rem 2rem;
     }
 
     .text-block h2 {
@@ -882,10 +932,21 @@ body {
 
     .contact-content h2 {
         font-size: 3rem;
+        margin-bottom: 1.5rem;
     }
 
     .contact-content p {
         font-size: 1.15rem;
+        margin-bottom: 3rem;
+    }
+    
+    .contact-link {
+        font-size: 1.4rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .social-links {
+        gap: 2rem;
     }
 
     .mock-image {
@@ -898,12 +959,45 @@ body {
     .contact-section,
     .custom-section {
         padding: 6rem 1.5rem;
+        min-height: auto;
+    }
+    
+    .hero-section {
+        min-height: 100vh;
+    }
+    
+    /* Hide floating elements on tablets for cleaner look */
+    .floating-yarn,
+    .floating-element {
+        opacity: 0.1;
     }
 }
 
 @media (max-width: 480px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+    
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .logo {
+        height: 45px;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.7rem;
+        letter-spacing: 0.3px;
+    }
+
     .hero-title {
         font-size: 2.5rem;
+        letter-spacing: 1px;
     }
 
     .hero-subtitle {
@@ -918,33 +1012,195 @@ body {
     .scroll-indicator span {
         font-size: 0.7rem;
     }
+    
+    .scroll-arrow {
+        height: 40px;
+    }
 
     .text-content h2 {
         font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .text-content p {
+        font-size: 1rem;
+        line-height: 1.8;
     }
 
     .section-title {
         font-size: 2.2rem;
+        margin-bottom: 2.5rem;
     }
 
-    .logo {
-        height: 45px;
+    .mock-image {
+        height: 300px;
+    }
+    
+    .image-label {
+        font-size: 1.8rem;
+    }
+    
+    .gallery-item .mock-image {
+        height: 280px;
+    }
+    
+    .gallery-grid {
+        gap: 1.5rem;
+    }
+    
+    .process-step {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .step-number {
+        font-size: 2.5rem;
+    }
+    
+    .process-step h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .process-step p {
+        font-size: 0.95rem;
+    }
+    
+    .feature {
+        padding: 2rem 1.5rem;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1.2rem;
+    }
+    
+    .feature h3 {
+        font-size: 1.4rem;
+    }
+    
+    .feature p {
+        font-size: 0.95rem;
     }
 
-    .nav-menu {
-        gap: 1rem;
+    .contact-content h2 {
+        font-size: 2.5rem;
     }
-
-    .nav-menu a {
-        font-size: 0.75rem;
+    
+    .contact-content p {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .contact-link {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
     }
 
     .social-links {
         gap: 1.5rem;
     }
+    
+    .social-link {
+        font-size: 1rem;
+    }
+    
+    .story-section,
+    .gallery-section,
+    .process-section,
+    .contact-section {
+        padding: 5rem 1rem;
+    }
+    
+    .cta-button {
+        padding: 1.1rem 2.5rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Completely hide floating decorations on mobile */
+    .floating-yarn,
+    .floating-element {
+        display: none;
+    }
+}
 
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .logo {
+        height: 40px;
+    }
+    
+    .nav-menu a {
+        font-size: 0.65rem;
+    }
+    
+    .text-content h2 {
+        font-size: 1.9rem;
+    }
+    
+    .section-title {
+        font-size: 1.9rem;
+    }
+    
     .contact-content h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    
+    .mock-image {
+        height: 250px;
+    }
+    
+    .gallery-item .mock-image {
+        height: 240px;
+    }
+}
+
+/* Landscape orientation fixes for mobile devices */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 100vh;
+        padding: 5rem 2rem;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .scroll-indicator {
+        bottom: 1.5rem;
+    }
+    
+    .story-section,
+    .gallery-section,
+    .process-section,
+    .contact-section {
+        min-height: auto;
+        padding: 5rem 2rem;
+    }
+}
+
+/* High-resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .mock-image {
+        image-rendering: -webkit-optimize-contrast;
     }
 }
 
